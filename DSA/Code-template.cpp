@@ -13,7 +13,7 @@ int main() {
     
 	while(t--){
 	    
-        
+        //write your code for solution here
       
 
 	    
