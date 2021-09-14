@@ -1,4 +1,4 @@
-//Link: https://leetcode.com/problems/majority-element/submissions/
+//Link: https://leetcode.com/problems/majority-element/
 
 class Solution {
 public:
