@@ -40,3 +40,36 @@ public:
         
     }
 };
+
+// solution2 ***************************************************************************************************88
+
+class Solution {
+public:
+    int findLHS(vector<int>& nums) {
+        
+        unordered_map <int , int > mp;
+        int mx=0;
+        
+        for ( auto p : nums)
+        {
+            mp[p]++;
+        }
+ 
+        
+        for(auto it : mp)
+        {        
+             
+            int ele=(it.first+1);
+            if(mp.count(ele) > 0)
+            {
+                auto sum=it.second + mp[ele];
+                
+                mx=max(mx,sum);
+            }
+            
+        }
+
+        return mx;
+        
+    }
+};
