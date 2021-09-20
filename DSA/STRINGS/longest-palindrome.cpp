@@ -1,5 +1,34 @@
 //LINK: https://leetcode.com/problems/longest-palindrome/
 
+//LINK: https://leetcode.com/problems/longest-palindrome/
+
+//optimised solution
+
+class Solution {
+public:
+    int longestPalindrome(string s) {
+        
+        int ans=0;
+        unordered_map<char, int> mp;
+        
+        for(auto it: s)
+        {
+            mp[it]++;
+        }
+        
+        for(auto p : mp)
+        {
+            ans+= p.second/2 * 2;
+            if(ans%2==0 && p.second%2==1)
+                ans=ans+1;
+        }
+   
+        return ans;
+    }
+};
+
+//**************************************************************************************************************8888
+
 class Solution {
 public:
     int longestPalindrome(string s) {
