@@ -10,6 +10,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
 class Solution {
 public:
     ListNode* reverseList(ListNode* &head) {
@@ -17,17 +18,14 @@ public:
     if(head==NULL || head->next == NULL) return head;
       ListNode* prev=NULL;
       ListNode* curr=head;
-      ListNode* nxt= curr->next;
+      ListNode* nxt=NULL;
         
         while(curr!=NULL)
         {
+            nxt= curr->next;
             curr->next=prev;
             prev=curr;
             curr=nxt;
-            if(curr!=NULL)
-                nxt=curr->next;
-            else
-                break;
         }
         
         return prev;
