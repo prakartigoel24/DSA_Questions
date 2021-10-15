@@ -41,3 +41,52 @@ public:
     }
 };
 
+//USING ARRAY (OPTIMISED )
+
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        
+        int N= 10e5;
+        int arr[N];
+        int i=0;
+        while(head!=nullptr)
+        {
+            arr[i++]=head->val;
+            head=head->next;
+        }
+        
+        for(int j=0;j<i/2;j++)
+        {
+            if(arr[j]!=arr[i-j-1]) return false;
+        }
+        
+        return true;
+    }
+};
+
+
+//Using STACK AND QUEUE
+
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        
+        stack<int> st ;
+        queue<int> q;
+        while(head!=nullptr)
+        {
+            st.push(head->val) , q.push(head->val);
+            head=head->next;
+        }
+        
+        while(!st.empty() and !q.empty())
+        {
+            if(st.top()!=q.front()) return false;
+            
+            st.pop();q.pop();
+        }
+        return true;
+    }
+};
+
