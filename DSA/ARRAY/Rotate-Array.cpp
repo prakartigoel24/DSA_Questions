@@ -1,5 +1,28 @@
 //LINK : https://leetcode.com/problems/rotate-array/
 
+//optimised solution(using STL reverse)
+
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        
+    int i=1;
+    int n=nums.size() ; 
+    if(n==k or k==0) return;
+        
+     while(k>n)
+        k=k-n;
+        
+    int l= n-k;
+        
+        reverse(nums.begin()+ l , nums.end());
+        reverse(nums.begin(),nums.begin()+l);
+        reverse(nums.begin(),nums.end());
+    
+        return;
+    }
+};
+
 //using extra space
 class Solution {
 public:
@@ -34,3 +57,5 @@ for(auto it:v)
 return;
     }
 };
+
+
