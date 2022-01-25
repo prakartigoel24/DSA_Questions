@@ -44,3 +44,35 @@ vector<vector<int>> generate(int numRows) {
 
 //RECURSION
 
+class Solution {
+public:
+    vector<vector<int>> generate(int numRows) {
+        
+         vector<vector<int>> dp(numRows,vector<int>(numRows,1));
+        
+        if(numRows==1)
+        {    
+            return dp;
+        }
+        
+        
+        dp=generate(numRows-1);
+        vector<int> newTemp(numRows,0);
+        for(int i=0;i<numRows;i++)
+        {
+            if(i==0 or i==numRows-1)
+            {
+                newTemp[i]=1;
+            }
+            else
+            {
+                newTemp[i]= dp[numRows-2][i]+dp[numRows-2][i-1];
+            }
+        }
+            
+        dp.push_back(newTemp);
+        
+        return dp;
+            
+    }
+};
