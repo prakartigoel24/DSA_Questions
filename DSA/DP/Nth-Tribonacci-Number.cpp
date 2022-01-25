@@ -1,6 +1,30 @@
 //LINK : https://leetcode.com/problems/n-th-tribonacci-number/
 
 //SPACE OPTIMISED SOLUTION
+class Solution {
+public:
+    int tribonacci(int n) {
+        
+        if(n==0) return 0;
+        else if(n==1 or n==2) return 1;
+        
+       int p1=0, p2=1, p3=1;
+        
+        for(int i=3;i<=n;i++)
+        {
+            
+           int curr=p1+p2+p3;
+            
+            p1=p2;
+            p2=p3;
+            p3=curr;
+
+        }
+        
+        return p3;
+    }
+};
+
 
 //TABULATION
 class Solution {
