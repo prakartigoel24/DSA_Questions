@@ -31,3 +31,32 @@ public:
 };
 
 //TABULATION
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amo) {
+        
+        int n=coins.size();
+        vector<int> dp(amo+1,INT_MAX);
+        
+        dp[0]=0;
+        
+        
+        for(int j=1;j<=amo;j++)
+        {
+            for(int i=0;i<n;i++)
+            {
+
+                if(j-coins[i]>=0 )
+                {
+                    dp[j] = min(dp[j] +0LL ,dp[j-coins[i]]+1LL);   
+
+                }
+
+            }
+            
+        }
+         
+       return (dp[amo]== INT_MAX ? -1:dp[amo]);
+       
+    }
+};
