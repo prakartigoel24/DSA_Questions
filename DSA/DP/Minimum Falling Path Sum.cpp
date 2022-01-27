@@ -1,6 +1,50 @@
 //LINK : https://leetcode.com/problems/minimum-falling-path-sum/
 
-//TABULATION
+//WITHOUT DP Table - o(1) space
+
+public:
+    int minFallingPathSum(vector<vector<int>>& mat) {
+        
+        int n=mat.size() ;
+        
+        for(int i=n-1;i>=0;i--)
+        {
+            for(int j=n-1;j>=0;j--)
+            {
+                
+                if(i==n-1)
+                {
+                    continue;
+                }
+                else if(j==n-1)
+                {
+                    mat[i][j]= mat[i][j] + min(mat[i+1][j],mat[i+1][j-1]);
+                }
+                else if(j==0)
+                {
+                    mat[i][j]= mat[i][j] + min(mat[i+1][j],mat[i+1][j+1]);
+
+                }
+                else
+                {
+                    mat[i][j]= mat[i][j] + min( mat[i+1][j], min(mat[i+1][j-1],mat[i+1][j+1]) );
+
+                }
+            }
+        }
+        
+        int m=INT_MAX;
+        
+        for(int i=0;i<n;i++)
+        {
+            m=min(m,mat[0][i]);
+        }
+        
+        return m;
+    }
+};
+
+//TABULATION - o(n*n) space
 class Solution {
 public:
     int minFallingPathSum(vector<vector<int>>& mat) {
