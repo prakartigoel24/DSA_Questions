@@ -1,6 +1,8 @@
 //LINK : https://leetcode.com/problems/triangle/
 
-//TABULATION
+//SPACE OPTIMISED SOLUTION - O(1)
+
+//TABULATION - O(r*r)
 class Solution {
 public:
     int minimumTotal(vector<vector<int>>& triangle) {
