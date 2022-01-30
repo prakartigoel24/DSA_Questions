@@ -1,5 +1,47 @@
 //LINK :  https://leetcode.com/problems/partition-equal-subset-sum/
 
+//Space optimised -TABULATION
+class Solution {
+public:
+    bool canPartition(vector<int>& nums) {
+        
+        int n = nums.size();
+        if(n==1) return false;
+        
+        int sum=0;
+        for(auto &it: nums)
+            sum+=it;
+        
+        if(sum%2!=0) return false;
+        
+        sum=sum/2;
+        
+        vector<bool> dp (sum+1,false);
+        vector<bool> prev( sum+1,false);
+        
+        prev[0]=true;
+        dp[0]=true;
+        bool ch=false;
+        
+        for(int i=1;i<=nums.size();i++)
+        {
+            for(int j=1;j<=sum;j++)
+            {
+                    if(nums[i-1] <= j)
+                    {
+                       ch = (prev[j-nums[i-1]]);
+                    }
+                    
+                    dp[j]=(prev[j]|ch);
+              }
+        
+            prev=dp;
+        }
+        
+             return dp[sum];
+    }
+};
+
 //TABULATION
 class Solution {
 public:
