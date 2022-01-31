@@ -1,8 +1,8 @@
 //LINK : https://leetcode.com/problems/out-of-boundary-paths/
 
 //MEMOISATION
-#define mod 1000000007
 
+#define mod 1000000007
 int dp[100][100][100];
 class Solution {
 public:
@@ -28,8 +28,7 @@ public:
         return dp[i][j][mm]=(m1+m2+m3+m4+0LL)%mod;
         
     }
-    
-    
+
     int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
         
         memset(dp,-1,sizeof(dp));
