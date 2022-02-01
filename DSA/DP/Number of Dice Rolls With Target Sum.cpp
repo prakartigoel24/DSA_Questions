@@ -7,7 +7,7 @@ class Solution {
 public:
     int waysdice(int n, int k, int target , vector<vector<int>> &dp) {
   
-        if(target < n or target > n*k) return 0;
+        if(target < n) return 0;
         
         if(n==1)
         {
