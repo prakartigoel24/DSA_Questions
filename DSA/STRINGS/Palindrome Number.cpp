@@ -1,6 +1,6 @@
 //LINK : https://leetcode.com/problems/palindrome-number/
 
-// Method -1
+// Method -1 (Converting num to string)
 class Solution {
 public:
     bool isPalindrome(int x) {
@@ -22,7 +22,7 @@ public:
     }
 };
 
-// Method -2
+// Method -2  (Reversing the number)
 class Solution {
 public:
     bool isPalindrome(int x) {
