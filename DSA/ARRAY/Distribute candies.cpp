@@ -1,10 +1,11 @@
 //LINK : https://leetcode.com/problems/distribute-candies/
 
+//Using set
 class Solution {
 public:
     int distributeCandies(vector<int>& candyType) {
         
-        set<int> s;
+        unordered_set<int> s;
         int n=candyType.size(); 
         
         for(auto it:candyType)
@@ -14,13 +15,7 @@ public:
         
         int types=s.size();
         
-        if(types > n/2)
-        {
-            return n/2;
-        }
-        
-        return types;
-           
-        
+       return n/2 <types ? n/2:types;   
     }
 };
+
