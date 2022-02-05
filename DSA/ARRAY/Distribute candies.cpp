@@ -19,3 +19,23 @@ public:
     }
 };
 
+//Using map
+class Solution {
+public:
+    int distributeCandies(vector<int>& candyType) {
+        
+        unordered_map<int, int> mp;
+        int n=candyType.size(); 
+        
+        for(auto it:candyType)
+        {
+            mp[it]++;
+        }
+        
+        int types=mp.size();
+        
+       return n/2 <types ? n/2:types;
+           
+        
+    }
+};
