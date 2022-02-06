@@ -1,6 +1,6 @@
 //Link: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
-
+//Method -1
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
