@@ -56,3 +56,21 @@ public:
         return nums.size();
     }
 };
+
+//method -3
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        
+        sort(nums.begin(), nums.end());
+        
+       auto it =  unique(nums.begin(),nums.end());
+        
+        
+        int  k = distance(nums.begin(), it);
+        
+        
+        return k;
+    }
+};
