@@ -2,7 +2,7 @@
 
 //Link: https://leetcode.com/problems/move-zeroes/
 
-
+//Solution-1
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
