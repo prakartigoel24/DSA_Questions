@@ -1,6 +1,6 @@
 //Link: https://leetcode.com/problems/contains-duplicate-ii/
 
-//optimised solution 
+//Optimised solution 
 
 class Solution {
 public:
