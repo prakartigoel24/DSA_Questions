@@ -11,7 +11,7 @@
  * };
  */
 
-//USING REVERSE POINTERS
+//USING REVERSE POINTERS [sol-1]
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
@@ -41,7 +41,7 @@ public:
     }
 };
 
-//USING ARRAY (OPTIMISED )
+//USING ARRAY (OPTIMISED ) [sol-2]
 
 class Solution {
 public:
@@ -66,7 +66,7 @@ public:
 };
 
 
-//Using STACK AND QUEUE
+//Using STACK AND QUEUE [sol-3]
 
 class Solution {
 public:
