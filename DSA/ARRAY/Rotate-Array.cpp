@@ -23,7 +23,7 @@ public:
     }
 };
 
-//using extra space
+//Sol -2 (using extra space)
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
