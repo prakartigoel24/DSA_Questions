@@ -1,6 +1,6 @@
 //LINK : https://leetcode.com/problems/minimum-falling-path-sum/
 
-//WITHOUT DP Table - o(1) space
+//WITHOUT DP Table - o(1) space [ sol-1]
 
 public:
     int minFallingPathSum(vector<vector<int>>& mat) {
@@ -44,7 +44,7 @@ public:
     }
 };
 
-//TABULATION - o(n*n) space
+//TABULATION - o(n*n) space [sol-2]
 class Solution {
 public:
     int minFallingPathSum(vector<vector<int>>& mat) {
