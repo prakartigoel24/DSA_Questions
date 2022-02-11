@@ -1,5 +1,6 @@
 
 //link: https://leetcode.com/problems/reverse-linked-list/
+//[sol-1]
 class Solution {
 public:
     ListNode* newHead;
