@@ -8,7 +8,7 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-//USING TWO POINTERS
+//USING TWO POINTERS [sol-1]
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
@@ -30,7 +30,7 @@ public:
     }
 };
 
-//HASHMAP SOLUTION
+//HASHMAP SOLUTION [sol-2]
 
 class Solution {
 public:
