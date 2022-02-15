@@ -1,6 +1,6 @@
 //LINK : https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
-//USING RECURSION
+//USING RECURSION [SOL-1]
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
