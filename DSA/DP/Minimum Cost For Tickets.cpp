@@ -1,6 +1,6 @@
 //LINK : https://leetcode.com/problems/minimum-cost-for-tickets/
 
-//Tabulation
+//Tabulation [SOL-1]
 class Solution {
 public:
     int mincostTickets(vector<int>& days, vector<int>& cost) {
