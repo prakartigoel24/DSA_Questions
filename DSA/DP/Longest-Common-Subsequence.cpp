@@ -1,6 +1,6 @@
 //LINK : https://leetcode.com/problems/longest-common-subsequence/
 
-//TABULATION
+//TABULATION [SOl-1]
 class Solution {
 public:
     int longestCommonSubsequence(string s1, string s2) {
