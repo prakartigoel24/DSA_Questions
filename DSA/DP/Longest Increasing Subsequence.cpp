@@ -1,6 +1,6 @@
 //LINK : https://leetcode.com/problems/longest-increasing-subsequence/ 
 
-//TABULATION
+//TABULATION [Sol-1]
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
