@@ -30,7 +30,7 @@ public:
     }
 };
 
-//MEMOISATION 
+//MEMOISATION [Sol-2]
 class Solution {
 public:
     int dp[1001][1001];
