@@ -1,6 +1,6 @@
 //LINK : https://leetcode.com/problems/last-stone-weight-ii/
 
-// TABULATION
+// TABULATION [sol-1]
 //*Variation of subset sum equals target* --> used the last row of dp array to find different subset sums then found the min difference of subsets.
 
 class Solution {
@@ -50,7 +50,7 @@ public:
     }
 };
 
-//TABULATION - space optimised
+//TABULATION - space optimised 
 class Solution {
 public:
  int lastStoneWeightII(vector<int>& nums) {
