@@ -1,6 +1,6 @@
 //LINK : https://leetcode.com/problems/target-sum/
 
-//MEMOISATION 
+//MEMOISATION [SOL-1]
 class Solution {
 int dp[21][1010];
 public:
