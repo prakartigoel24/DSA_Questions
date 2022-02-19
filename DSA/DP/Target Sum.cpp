@@ -33,7 +33,7 @@ public:
     }
 };
 
-//RECURSIVE APPROACH
+//RECURSIVE APPROACH [sol-2]
 class Solution {
 public:
     int solve(vector<int>& nums, int i, int sum, int tar)
