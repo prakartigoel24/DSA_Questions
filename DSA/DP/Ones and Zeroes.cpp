@@ -39,3 +39,56 @@ public:
         return ans;
     }
 };
+
+//Tabulation
+class Solution {
+public:  
+    int findMaxForm(vector<string>& strs, int m1, int n1) {
+        
+        int sz= strs.size();
+        int dp[sz+1][m1+1][n1+1];
+        memset(dp,0,sizeof(dp));  
+        
+        for(int i=0;i<=m1;i++)
+        {
+            for(int j=0;j<=n1;j++)
+            {
+                char z='0', o='1';
+                int zeros = count(strs[sz-1].begin(), strs[sz-1].end(),z);
+                int ones = count(strs[sz-1].begin(), strs[sz-1].end(),o);
+                
+                if(zeros<=i and ones<=j)
+                dp[sz-1][i][j]=1;
+                
+            }
+        }
+        
+        for(int i=sz-2;i>=0;i--)
+        {
+            
+            for(int m=0;m<=m1;m++)
+            {
+                for(int n=0;n<=n1;n++)
+                {
+                    char z='0', o='1';
+                    int zeros = count(strs[i].begin(), strs[i].end(),z);
+                    int ones = count(strs[i].begin(), strs[i].end(),o);
+                    
+                    if(zeros<=m and ones<=n)
+                    {
+                        dp[i][m][n]=  max(dp[i+1][m-zeros][n-ones]+1 ,dp[i+1][m][n] );
+                    }
+                    else
+                    {
+                        dp[i][m][n]= dp[i+1][m][n] ;
+                    }
+
+                }
+            }
+        }
+      
+        return dp[0][m1][n1];
+        
+        
+    }
+};
