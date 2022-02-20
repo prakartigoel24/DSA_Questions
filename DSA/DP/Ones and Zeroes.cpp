@@ -1,5 +1,7 @@
 //LINK : https://leetcode.com/problems/ones-and-zeroes/
 
+ ** // scroll down for most optimal solution //**
+     
 //Memoisation 
 
 class Solution {
@@ -88,7 +90,60 @@ public:
         }
       
         return dp[0][m1][n1];
+   
+    }
+};
+
+//Space Optimised Solution
+
+class Solution {
+public:  
+    int findMaxForm(vector<string>& strs, int m1, int n1) {
         
+        int sz= strs.size();
         
+        vector<vector<int>> cur(m1+2,vector<int>(n1+2,0));
+        vector<vector<int>> next(m1+2,vector<int>(n1+2,0));
+        
+        for(int i=0;i<=m1;i++)
+        {
+            for(int j=0;j<=n1;j++)
+            {
+                char z='0', o='1';
+                int zeros = count(strs[sz-1].begin(), strs[sz-1].end(),z);
+                int ones = count(strs[sz-1].begin(), strs[sz-1].end(),o);
+                
+                if(zeros<=i and ones<=j)
+                next[i][j]=1;
+                
+            }
+        }
+        
+        for(int i=sz-2;i>=0;i--)
+        {
+            
+            for(int m=0;m<=m1;m++)
+            {
+                for(int n=0;n<=n1;n++)
+                {
+                    char z='0', o='1';
+                    int zeros = count(strs[i].begin(), strs[i].end(),z);
+                    int ones = count(strs[i].begin(), strs[i].end(),o);
+                    
+                    if(zeros<=m and ones<=n)
+                    {
+                        cur[m][n]=  max(next[m-zeros][n-ones]+1 ,next[m][n] );
+                    }
+                    else
+                    {
+                        cur[m][n]= next[m][n] ;
+                    }
+
+                }
+            }
+            
+            next=cur;
+        }
+        return next[m1][n1];
     }
 };
