@@ -47,3 +47,42 @@ public:
         
     }
 };
+
+//Tabulation
+
+class Solution {
+public:    
+    int calculateMinimumHP(vector<vector<int>>& dun) {
+        
+        int dp[201][201];
+        memset(dp,1, sizeof(dp));
+        
+         
+        int r=dun.size();
+        int c=dun[0].size();
+        
+        if(dun[r-1][c-1] <=0) dp[r-1][c-1]= -dun[r-1][c-1]+1;
+        else dp[r-1][c-1]=1;
+
+        for(int i=r-1;i>=0;i--)
+        {
+
+            for(int j=c-1;j>=0;j--)
+            {
+                
+                if(i==r-1 and j==c-1) continue;
+                
+                 int ans=min(dp[i][j+1], dp[i+1][j]) - dun[i][j];
+
+                if(ans<=0)
+                     dp[i][j]= 1;
+                else 
+                     dp[i][j]= ans;
+                
+            }
+        }
+        
+        
+        return dp[0][0];        
+    }
+};
