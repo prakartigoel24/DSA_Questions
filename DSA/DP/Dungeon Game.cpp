@@ -48,7 +48,7 @@ public:
     }
 };
 
-//Tabulation
+//Tabulation [sol-2]
 
 class Solution {
 public:    
