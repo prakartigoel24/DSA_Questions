@@ -1,6 +1,6 @@
 // Link : https://leetcode.com/problems/dungeon-game/
 
-//Memoisation
+//Memoisation [sol-1]
 
 class Solution {
 int dp[201][201];
