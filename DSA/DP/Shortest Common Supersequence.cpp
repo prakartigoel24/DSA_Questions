@@ -1,6 +1,6 @@
 // LINK : https://leetcode.com/problems/shortest-common-supersequence/
 
-//Tabulation
+//Tabulation [sol-1]
 class Solution {
 public:
     string shortestCommonSupersequence(string str1, string str2) {
@@ -8,10 +8,10 @@ public:
         int n=str1.length();
         int m=str2.length();
         
-        //finding lcs 
         vector<vector<int>> dp(n+1,vector<int>(m+1,0));
-        
-        
+
+       //finding Length of LCS
+
         for(int i=1;i<=n;i++)
         {
             for(int j=1;j<=m;j++)
@@ -27,6 +27,8 @@ public:
             }
         }
         
+        //Using LCS table to find Shortest Common Supersequence 
+        // -->  Taking common char once i.e. taking LCS once in the supersequence
         int ii=n, jj=m;
         
         string ans="";
