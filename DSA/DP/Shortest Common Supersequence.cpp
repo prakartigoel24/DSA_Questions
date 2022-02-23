@@ -1,4 +1,4 @@
-// LINK : 
+// LINK : https://leetcode.com/problems/shortest-common-supersequence/
 
 //Tabulation
 class Solution {
