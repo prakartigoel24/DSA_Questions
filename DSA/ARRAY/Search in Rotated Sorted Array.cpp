@@ -1,6 +1,6 @@
 // LINK :https://leetcode.com/problems/search-in-rotated-sorted-array/
 
-//USING STL
+//USING STL [sol-1]
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
