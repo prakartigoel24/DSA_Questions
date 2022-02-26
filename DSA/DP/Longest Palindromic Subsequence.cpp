@@ -1,6 +1,6 @@
 //LINK : https://leetcode.com/problems/longest-palindromic-subsequence/
 
-//TABULATION
+//TABULATION [sol-1]
 
 class Solution {
 public:
