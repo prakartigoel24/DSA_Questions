@@ -1,6 +1,6 @@
 // LINK :https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/
 
-//TABULATION [sol-1]
+//TABULATION [sol-1] (OPTIMISED SOLUTION)
 
 class Solution {
 public:
