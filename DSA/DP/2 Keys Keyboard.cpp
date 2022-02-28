@@ -27,7 +27,7 @@ int minSteps(int n) {
     }
 };
 
-//MEMOISATION SOLUTION
+//MEMOISATION SOLUTION  [sol-2]
 class Solution {
 int dp[1010][1010];
 public:
