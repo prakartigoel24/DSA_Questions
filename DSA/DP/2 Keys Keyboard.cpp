@@ -1,6 +1,6 @@
 //LINK :  https://leetcode.com/problems/2-keys-keyboard/
 
-//RECURSIVE SOLUTION - (accepted)
+//RECURSIVE SOLUTION - (accepted) [sol-1]
 class Solution {
 public:
 int steps(int reqA ,int screenA,int clipA)
