@@ -57,3 +57,44 @@ public:
 };
 
 // Expand From Centre [sol-2]
+class Solution {
+public:
+    int ExpandAroundCentreLen(string str , int L , int R)
+    {
+    
+        while(L>=0 and R<str.length() and str[L]==str[R])
+        {
+            L--, R++;
+        }
+        
+        return R-L-1;
+    }
+    
+    string longestPalindrome(string str) {
+      
+        int len=str.length(), lenmax=0;
+        
+        if(len<1) return "";
+        if(len==1) return str;
+        
+        int s =0 , e=0;
+        
+        for(int i=0;i<len;i++)
+        {
+            int maxlen1=ExpandAroundCentreLen(str,i,i);
+            int maxlen2=ExpandAroundCentreLen(str,i,i+1);
+            
+            if(lenmax < max(maxlen1,maxlen2))
+            {
+                lenmax=max(maxlen1,maxlen2);
+                s=i-(lenmax-1)/2;
+               
+            }
+        }
+        
+    
+    return str.substr(s,lenmax);    
+        
+    }
+};
+
