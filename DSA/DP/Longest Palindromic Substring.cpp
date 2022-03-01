@@ -1,6 +1,6 @@
 // LINK : https://leetcode.com/problems/longest-palindromic-substring/
 
-//TABULATION [sol-1]
+//TABULATION [sol-1] (DP)
 class Solution {
 public:
     string longestPalindrome(string s) {
@@ -55,3 +55,5 @@ public:
         return ans;
     }
 };
+
+// Expand From Centre [sol-2]
