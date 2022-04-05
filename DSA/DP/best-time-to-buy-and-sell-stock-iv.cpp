@@ -34,7 +34,37 @@ public:
     }
 };
 
-//TABULATION
+//TABULATION -1
+class Solution {
+public:
+ int maxProfit(int k, vector<int>& prices) {
+
+       int n=prices.size();
+       vector<vector<int>> dp(n+1,vector<int>(2*k +1,0));
+        
+        
+        for(int i=n-1;i>=0;i--)
+        {
+            for(int transNo=2*k - 1;transNo>=0;transNo--)
+            {
+                if(transNo%2==0)
+                {
+                        dp[i][transNo] = max(-prices[i]+dp[i+1][transNo+1] ,dp[i+1][transNo]);           
+                }
+                else
+                {
+                        dp[i][transNo] = max(prices[i]+dp[i+1][transNo+1],dp[i+1][transNo]);
+                }
+        
+            }
+        }
+        
+        
+       return dp[0][0];
+    }
+};
+
+//TABULATION -2 
 class Solution {
 public:
     int maxProfit(int k, vector<int>& prices) {
@@ -66,7 +96,40 @@ public:
 };
 
 
-//MEMOISATION
+//MEMOISATION -1
+class Solution {
+public:
+    int maxPro(vector<int>& prices, int i, int transNo ,int k, vector<vector<int>> &dp )
+    {
+        int n=prices.size();
+        
+        if(i==n || transNo==2*k) return 0;
+
+        if(dp[i][transNo]!=-1) return dp[i][transNo];
+        
+        long long profit=0;
+        if(transNo%2==0)
+        {
+            profit = max(-prices[i]+maxPro(prices,i+1,transNo+1,k, dp) ,maxPro(prices,i+1,transNo,k,dp));
+        }
+        else
+        {
+            profit = max(prices[i]+maxPro(prices,i+1,transNo+1,k,dp), maxPro(prices, i+1,transNo,k,dp));
+        }
+        
+        return dp[i][transNo] = profit;        
+    }
+
+    int maxProfit(int k, vector<int>& arr) {
+
+          int n=arr.size();
+
+       vector<vector<int>> dp(n,vector<int>(2*k,-1));
+       return maxPro(arr,0,0,k,dp);
+    }
+};
+
+//MEMOISATION -2
 class Solution {
 public:
     int maxPro(vector<int>& prices, int i, int canbuy ,int cap, vector<vector<vector<int>>> &dp )
