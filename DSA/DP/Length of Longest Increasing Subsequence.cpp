@@ -1,6 +1,40 @@
 //LINK : https://leetcode.com/problems/longest-increasing-subsequence/ 
 
-//OPTIMISED APPROACH 
+//MOST OPTIMISED APPROACH (Using binary search) TC- (N   logN)
+
+//Using binary search/ lower bound.  
+//Solution Video  - https://www.youtube.com/watch?v=on2hvxBXJH4&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=44
+
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        
+        int n=nums.size();
+        vector<int> arr;
+        arr.push_back(nums[0]);
+        int len=1;
+        for(int i=1;i<n;i++)
+        {
+         
+            if(nums[i] > arr.back())
+            {
+                arr.push_back(nums[i]);
+                len++;
+            }
+            else
+            {
+                int idx = lower_bound(arr.begin(),arr.end(),nums[i])-arr.begin();
+                arr[idx]= nums[i];
+
+            }
+        }
+        
+        return len;
+    }
+};
+
+
+//OPTIMISED APPROACH TC - (N^2)
 class Solution {
 public:
     int lengthOfLIS(vector<int>& arr) {
@@ -25,7 +59,7 @@ public:
     }
 };
 
-//TABULATION [Sol-1]
+//TABULATION [Sol-1] TC - (N^2)
 class Solution {
 public:
     int lengthOfLIS(vector<int>& arr) {
@@ -56,7 +90,7 @@ public:
     }
 };
 
-//TABULATION [SOL-2]
+//TABULATION [SOL-2] TC - (N^2)
 class Solution {
 public:
     int lengthOfLIS(vector<int>& arr) {
