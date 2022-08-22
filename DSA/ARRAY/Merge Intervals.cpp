@@ -15,7 +15,7 @@ public:
         {
             if(intervals[i][0]<=merged[s-1][1])
             {
-                merged[s-1][1]= (intervals[i][1] > merged[s-1][1]?intervals[i][1]:merged[s-1][1]);
+                merged[s-1][1]= max(intervals[i][1],merged[s-1][1]);
             }
             else
             {
